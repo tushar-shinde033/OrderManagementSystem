@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="index::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Add New Product Page</title>
+</head>
+<body>
+	<section style="height:100vh;">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 offset-md-2">
+					<div class="my-card mt-1">
+
+				      <div class="container text-center" style="padding-top:20px;">
+				      	<img class="" style="width:80px;" th:src="@{/img/membership.png}"/>
+				      </div>
+						<h1 class="text-center" style="padding-bottom:20px;">Add New Product!!</h1>
+						
+						<div th:if="${message}" th:classappend="${message.type}" class="alert" role="alert">
+          					<p class="text-center" th:text="${message.content}"></p>
+    					</div>
+						<form action="" th:action="@{/add-product}" method="post">
+							<div class="mb-3">
+							    <label for="name_field" class="form-label">Product Name </label>
+							    <input type="text" class="form-control" name="productName" id="name_field" aria-describedby="emailHelp" placeholder="Enter Product Name" required><!--  th:classappend="${#fields.hasErrors('name'?'is-invalid':'')}" -->
+							 </div>
+							  <div class="mb-3">
+							    <label for="quantity_field" class="form-label">Description</label>
+							    <input type="text" class="form-control" name="description" id="quantity_field" aria-describedby="emailHelp" placeholder="Enter Product Quantity" required>
+							 </div>
+							 
+							 <div class="mb-3">
+							    <label for="email_field" class="form-label">Price</label>
+							    <input type="number" class="form-control" name="price" id="email_field" aria-describedby="emailHelp" placeholder="Enter Product Price" required>
+							 </div>
+		
+							 <div class="form-group form-check">
+								<input type="checkbox" name="agreement" class="form-check-input" id="agreement"/>
+								<label for="agreement">Accept terms and conditions</label>
+							</div>
+							 
+							 <div class="container text-center">
+							 	<button type="submit"  class="btn bg-primary text-white">
+							 		Add Product
+							 	</button>
+							 	<button type="reset" class="btn btn-warning text-white">
+							 		Reset
+							 	</button>
+							 </div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

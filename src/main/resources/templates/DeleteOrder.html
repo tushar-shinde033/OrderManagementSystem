@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="index::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Add New Order Page</title>
+</head>
+<body>
+	<section style="height:100vh;">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 offset-md-2">
+					<div class="my-card mt-1">
+				
+				      <div class="container text-center" style="padding-top:20px;">
+				      	<img class="" style="width:80px;" th:src="@{/img/membership.png}"/>
+				      </div>
+					
+						<h1 class="text-center" style="padding-bottom:20px;">Delete Order!!</h1>
+						<form action="" th:action="@{/delete-order}" method="post"><!-- th:action="@{/delete-order}"  th:object="${user}"  -->
+							
+							<div class="alert alert-danger" th:if="${deleteorder}"  role="alert">
+  								<h6 th:text="${deleteorder}"></h6>
+  								<h6 th:text="${valid}"></h6>
+							</div>
+							
+							<div class="mb-3">
+							    <label for="name_field" class="form-label">Enter A Product Name </label>
+							    <input type="text" class="form-control" name="name" id="name_field" aria-describedby="emailHelp" placeholder="Enter Name" required>
+							 </div>
+							 
+							 <div class="mb-3">
+							    <label for="name_field" class="form-label">Enter A Customer Email </label>
+							    <input type="email" class="form-control" name="email" id="name_field" aria-describedby="emailHelp" placeholder="Enter Customer Email" required>
+							 </div>
+							
+							 <div class="container text-center">
+							 	<button type="submit"  class="btn bg-primary text-white">
+							 		Delete Order
+							 	</button>
+							 	<button type="reset" class="btn btn-warning text-white">
+							 		Reset
+							 	</button>
+							 </div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

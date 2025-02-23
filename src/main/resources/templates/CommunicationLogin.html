@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="index::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Admin Login Page</title>
+</head>
+<body>
+	<section style="height:100vh;">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 offset-md-2">
+					<div class="my-card mt-1">
+
+				      <div class="container text-center" style="padding-top:20px;">
+				      	<img class="" style="width:80px;" th:src="@{/img/membership.png}"/>
+				      </div>
+						<h1 class="text-center">Get Details!!</h1>
+					    <div th:if="${message}" th:classappend="${message.type}" class="alert" role="alert">
+          					<p class="text-center" th:text="${message.content}"></p>
+    					</div>
+    						<div class="alert alert-danger" th:if="${errormessage}"  role="alert">
+  								<h6 th:text="${errormessage}"></h6>
+							</div>
+							
+						<form action="" th:action="@{get-communication}" method="get" th:object="${user}"><!-- th:action="@{/do_register}"  th:object="${user}"  -->
+
+							 <div class="mb-3">
+							    <label for="email_field" class="form-label">Enter Customer Email</label>
+							    <input type="email" class="form-control" name="email" id="email_field" aria-describedby="emailHelp" placeholder="Enter Email" required>
+							 </div>
+							 <div class="container text-center">
+							 	<button type="submit"  class="btn bg-primary text-white">
+							 		Get Details
+							 	</button>
+							 	<button type="reset" class="btn btn-warning text-white">
+							 		Reset
+							 	</button>
+							 </div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

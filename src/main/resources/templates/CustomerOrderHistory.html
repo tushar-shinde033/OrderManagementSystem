@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="index::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Add New Order Page</title>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 offset-md-2">
+					<div class="my-card mt-1">
+
+					 <!--	<div th:if="${session.message}" th:classappend="${session.message.type}" class="alert" role="alert">
+          					<p class="text-center" th:text="${session.message.content}"></p>
+          					<th:block th:text="${session.removeAttribute("message")}"></th:block> 
+    					</div>
+    					-->
+				      <div class="container text-center">
+				      	<img class="" style="width:80px;" th:src="@{/img/membership.png}"/>
+				      </div>
+					
+						<h1 class="text-center">Register Here!!</h1>
+						<form action="" method="post"><!-- th:action="@{/do_register}"  th:object="${user}"  -->
+							<div class="mb-3">
+							    <label for="name_field" class="form-label">Product Name </label>
+							    <input type="text" class="form-control" name="name" id="name_field" aria-describedby="emailHelp" placeholder="Enter Name" required><!--  th:classappend="${#fields.hasErrors('name'?'is-invalid':'')}" -->
+							<!-- 	<div class="valid-feedback" th:each="e:${#fields.errors('name')}" th:text="${e}">
+       								 Looks good!
+     							</div> -->
+							 </div>
+							 
+							  <div class="mb-3">
+							    <label for="quantity_field" class="form-label">Quantity</label>
+							    <input type="text" class="form-control" name="contact" id="quantity_field" aria-describedby="emailHelp" placeholder="Enter Contact" required>
+							 </div>
+							 
+							 <div class="mb-3">
+							    <label for="email_field" class="form-label">Price</label>
+							    <input type="email" class="form-control" name="email" id="email_field" aria-describedby="emailHelp" placeholder="Enter Email" required>
+							 </div>
+							 
+							 <div class="mb-3">
+							    <label for="address_field" class="form-label">Date</label>
+							    <input type="text" class="form-control" name="address" id="address_field" aria-describedby="emailHelp" placeholder="Enter Address " required>
+							 </div>
+							
+						
+							 
+							 <div class="form-group form-check">
+								<input type="checkbox" name="agreement" class="form-check-input" id="agreement"/>
+								<label for="agreement">Accept terms and conditions</label>
+							</div>
+							 
+							 <div class="container text-center">
+							 	<button type="submit"  class="btn bg-primary text-white">
+							 		Add Order
+							 	</button>
+							 	<button type="reset" class="btn btn-warning text-white">
+							 		Reset
+							 	</button>
+							 </div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
